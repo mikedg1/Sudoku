@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">dg Sudoku A Day</string>
+	<string name="difficulty_hard">Dangerous</string>
+	<string name="difficulty_medium">Average</string>
+	<string name="difficulty_easy">Wimpy</string>
+	<string name="folder_daily">Sudoku -A- Day</string>
+</resources>

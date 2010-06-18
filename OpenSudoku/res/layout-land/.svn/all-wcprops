@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/370/trunk/OpenSudoku/res/layout-land
+END
+im_popup_edit_note.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/298/trunk/OpenSudoku/res/layout-land/im_popup_edit_note.xml
+END
+im_popup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/317/trunk/OpenSudoku/res/layout-land/im_popup.xml
+END
+im_popup_edit_value.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/298/trunk/OpenSudoku/res/layout-land/im_popup_edit_value.xml
+END
+im_numpad.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/370/trunk/OpenSudoku/res/layout-land/im_numpad.xml
+END
+im_single_number.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/370/trunk/OpenSudoku/res/layout-land/im_single_number.xml
+END
+sudoku_play.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/293/trunk/OpenSudoku/res/layout-land/sudoku_play.xml
+END
+sudoku_edit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/356/trunk/OpenSudoku/res/layout-land/sudoku_edit.xml
+END

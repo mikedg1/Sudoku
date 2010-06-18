@@ -1,0 +1,12 @@
+K 13
+svn:mergeinfo
+V 234
+/branches/0.6.x/OpenSudoku/res/values-sv/strings.xml:156-173
+/branches/dracul/OpenSudoku/res/values-sv/strings.xml:192-193
+/branches/mhelff/OpenSudoku/res/values-sv/strings.xml:337-339
+/trunk/OpenSudoku/res/values-sv/strings.xml:3-291
+K 13
+svn:mime-type
+V 10
+text/plain
+END

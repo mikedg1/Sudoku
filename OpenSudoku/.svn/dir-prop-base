@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 9
+bin
+
+doc
+
+K 13
+svn:mergeinfo
+V 132
+/branches/0.6.x/OpenSudoku:156-173
+/branches/dracul/OpenSudoku:192-193
+/branches/mhelff/OpenSudoku:337-339
+/trunk/OpenSudoku:176-193
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/391/trunk/OpenSudoku/src/cz/romario/opensudoku/gui
+END
+GameTimeFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/256/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/GameTimeFormat.java
+END
+GameSettingsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/312/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/GameSettingsActivity.java
+END
+SeekBarPreference.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/295/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SeekBarPreference.java
+END
+SudokuListFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/255/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuListFilter.java
+END
+SudokuPlayActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/386/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuPlayActivity.java
+END
+SudokuBoardView.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/388/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuBoardView.java
+END
+Timer.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/255/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/Timer.java
+END
+SudokuImportActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/310/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuImportActivity.java
+END
+ImportSudokuActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/321/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/ImportSudokuActivity.java
+END
+SudokuListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/368/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuListActivity.java
+END
+FolderListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/368/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/FolderListActivity.java
+END
+FolderDetailLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/368/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/FolderDetailLoader.java
+END
+Changelog.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/366/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/Changelog.java
+END
+FileImportActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/310/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/FileImportActivity.java
+END
+SudokuExportActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/336/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuExportActivity.java
+END
+HintsQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/335/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/HintsQueue.java
+END
+SudokuEditActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/385/trunk/OpenSudoku/src/cz/romario/opensudoku/gui/SudokuEditActivity.java
+END
