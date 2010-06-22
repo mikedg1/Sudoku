@@ -61,8 +61,8 @@ public class SudokuService extends Service {
 				InputStream is = null;
 				BufferedReader buffer = null;
 				try {
-//					HttpGet get = new HttpGet("http://dgsudoku.appspot.com/dgsudokuweb"); //Test server
-					HttpGet get = new HttpGet("http://10.0.2.2:8888/dgsudokuweb"); //Test server
+					HttpGet get = new HttpGet("http://dgsudoku.appspot.com/dgsudokuweb"); //Test server
+//					HttpGet get = new HttpGet("http://10.0.2.2:8888/dgsudokuweb"); //Test server
 				
 					DefaultHttpClient httpClient = new DefaultHttpClient();
 					HttpResponse response = httpClient.execute(get);

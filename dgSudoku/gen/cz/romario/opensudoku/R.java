@@ -162,12 +162,13 @@ containing a value of this type.
         public static final int btn_toggle_completed_bg=0x7f02000d;
         public static final int btn_toggle_off=0x7f02000e;
         public static final int btn_toggle_on=0x7f02000f;
-        public static final int opensudoku=0x7f020010;
-        public static final int opensudoku_andy=0x7f020011;
-        public static final int pencil=0x7f020012;
-        public static final int pencil_disabled=0x7f020013;
-        public static final int pencil_license=0x7f020014;
-        public static final int title_bar=0x7f020015;
+        public static final int icon=0x7f020010;
+        public static final int opensudoku=0x7f020011;
+        public static final int opensudoku_andy=0x7f020012;
+        public static final int pencil=0x7f020013;
+        public static final int pencil_disabled=0x7f020014;
+        public static final int pencil_license=0x7f020015;
+        public static final int title_bar=0x7f020016;
     }
     public static final class id {
         public static final int button_1=0x7f080006;
