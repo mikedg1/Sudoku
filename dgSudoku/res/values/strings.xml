@@ -5,4 +5,14 @@
 	<string name="difficulty_medium">Average</string>
 	<string name="difficulty_easy">Wimpy</string>
 	<string name="folder_daily">Sudoku -A- Day</string>
+	
+    <string name="edit_sudoku">Edit sudoku</string>
+    
+    <string name="puzzle_folders">dg Sudoku A Day puzzle folders</string>
+    
+    <string name="version">Version: %s</string>
+	<string name="homepage">Homepage: http://android.mikedg.com</string>
+	<string name="email">Email: sudoku@mikedg.com</string>
+	<string name="work_in_progress">Please note that this is still work in progress.</string>
+	<string name="send_me_bugs">If you run into bug which you want to get fixed or have any suggestion, don\'t hesitate to contact me by e-mail.</string>    
 </resources>

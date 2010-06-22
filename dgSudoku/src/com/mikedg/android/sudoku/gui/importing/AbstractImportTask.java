@@ -73,10 +73,12 @@ public abstract class AbstractImportTask extends
 
 	@Override
 	protected void onProgressUpdate(Integer... values) {
-		if (values.length == 2) {
-			mProgressBar.setMax(values[1]);
+		if (mProgressBar != null) {
+			if (values.length == 2) {
+				mProgressBar.setMax(values[1]);
+			}
+			mProgressBar.setProgress(values[0]);
 		}
-		mProgressBar.setProgress(values[0]);
 	}
 
 	@Override

@@ -5,27 +5,13 @@
 </style>
 </head>
 <body>
-<b>1.1.1</b>
+<b>Some notes about dg Sudoku A Day</b>
 <ul>
-<li>Android 2.2 - move application to SD card support.</li>
-<li>Fixes few bugs reported via new Android 2.2 "Report" button.</li>
-<li>Few visual tweaks for Nexus One.</li>
-<li>"Fill in notes" menu item can now be enabled in game settings.</li>
-</ul>
-<b>1.1.0</b>
-<ul>
-<li>Italian translation (thanks to diego.pierotto)</li>
-<li>Few visual tweaks (thicker lines, some changes in Paper themes)</li>
-<li>New game helper - shows how many times number has been used (thanks to Todd Southen)</li>
-<li>
-Fixed bugs:
-  <ul>
-    <li>QVGA - Screen is sometimes shifted down (issue #82)</li>
-    <li>Undo should be disabled for a completed puzzle (issue #84)</li>
-    <li>List of games does not update (issue #73) </li>
-    <li>Other small fixes</li>
-  </ul>
-</li>
+<li>First off, welcome to the game!</li>
+<li>One of the big downfalls to many sudoku games is that you eventually run out of games. And even if you ca add or import more games, it's an annoyance. You won't have to worry about it any longer though.</li>
+<li>A one button check will pull down your Sudoku games for the day!</li>
+<li>dg Sudoku A Day is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License v3</a></li>
+<li>The source code is available at <a href="http://github.com/kaze0/Sudoku">GITHUB</a></li>
 </ul>
 </body>
 </html>

@@ -52,11 +52,10 @@ import cz.romario.opensudoku.gui.inputmethod.IMControlPanelStatePersister;
 import cz.romario.opensudoku.gui.inputmethod.IMNumpad;
 import cz.romario.opensudoku.gui.inputmethod.IMPopup;
 import cz.romario.opensudoku.gui.inputmethod.IMSingleNumber;
-import cz.romario.opensudoku.utils.AndroidUtils;
 
 /*
  */
-public class SudokuPlayActivity extends Activity{
+public class SudokuPlayActivity extends Activity {
 
 	public static final String EXTRA_SUDOKU_ID = "sudoku_id";
 	

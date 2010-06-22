@@ -51,9 +51,10 @@ import com.google.ads.AdSenseSpec;
 import com.google.ads.GoogleAdView;
 import com.google.ads.AdSenseSpec.AdType;
 import com.mikedg.android.sudoku.PrivateConstants;
-import com.mikedg.android.sudoku.SudokuActivity;
+import com.mikedg.android.sudoku.SudokuBaseListActivity;
 import com.mikedg.android.sudoku.db.SudokuDatabase;
 import com.mikedg.android.sudoku.gui.FolderDetailLoader.FolderDetailCallback;
+import com.mikedg.android.sudoku.service.SudokuService;
 
 import cz.romario.opensudoku.R;
 import cz.romario.opensudoku.db.FolderColumns;
@@ -142,16 +143,17 @@ public class FolderListActivity extends ListActivity {
         adView.showAds(adSenseSpec);
         
     	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-    	int times = preferences.getInt(SudokuActivity.PREF_TIMES_VIEWED, 0);
+    	int times = preferences.getInt(SudokuBaseListActivity.PREF_TIMES_VIEWED, 0);
     	if (times > 10) {
     		adView.setVisibility(View.VISIBLE);
     	} else {
     		times++;
     		Editor editor = preferences.edit();
-    		editor.putInt(SudokuActivity.PREF_TIMES_VIEWED, times);
+    		editor.putInt(SudokuBaseListActivity.PREF_TIMES_VIEWED, times);
     		editor.commit();
     	}
     	
+    	SudokuService.startDailyDownload(this);
 	}
     
     @Override

@@ -486,4 +486,15 @@ public class SudokuDatabase {
     public void endTransaction() {
     	mOpenHelper.getWritableDatabase().endTransaction();
     }
+    
+    public boolean doesGameExist(SudokuImportParams params) {
+    	//Just checks data!
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        qb.setTables(SUDOKU_TABLE_NAME);
+        
+        SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+        return qb.query(db, null, SudokuColumns.DATA +" = ?", new String[]{params.data}, null, null, "created ASC").isAfterLast();
+    	
+    }
 }

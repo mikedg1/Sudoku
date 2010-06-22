@@ -25,7 +25,6 @@ import java.util.Date;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -54,7 +53,7 @@ import com.google.ads.AdSenseSpec;
 import com.google.ads.GoogleAdView;
 import com.google.ads.AdSenseSpec.AdType;
 import com.mikedg.android.sudoku.PrivateConstants;
-import com.mikedg.android.sudoku.SudokuActivity;
+import com.mikedg.android.sudoku.SudokuBaseListActivity;
 import com.mikedg.android.sudoku.db.SudokuDatabase;
 import com.mikedg.android.sudoku.gui.FolderDetailLoader.FolderDetailCallback;
 
@@ -66,7 +65,6 @@ import cz.romario.opensudoku.game.SudokuGame;
 import cz.romario.opensudoku.gui.GameTimeFormat;
 import cz.romario.opensudoku.gui.SudokuBoardView;
 import cz.romario.opensudoku.gui.SudokuListFilter;
-import cz.romario.opensudoku.utils.AndroidUtils;
 
 /**
  * List of puzzles in folder.
@@ -74,7 +72,7 @@ import cz.romario.opensudoku.utils.AndroidUtils;
  * @author romario
  *
  */
-public class SudokuListActivity extends ListActivity {
+public class SudokuListActivity extends SudokuBaseListActivity {
     
 	public static final String EXTRA_FOLDER_ID = "folder_id";
 	
@@ -168,16 +166,15 @@ public class SudokuListActivity extends ListActivity {
         adView.showAds(adSenseSpec);
         
     	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-    	int times = preferences.getInt(SudokuActivity.PREF_TIMES_VIEWED, 0);
+    	int times = preferences.getInt(SudokuListActivity.PREF_TIMES_VIEWED, 0);
     	if (times > 10) {
     		adView.setVisibility(View.VISIBLE);
     	} else {
     		times++;
     		Editor editor = preferences.edit();
-    		editor.putInt(SudokuActivity.PREF_TIMES_VIEWED, times);
+    		editor.putInt(SudokuListActivity.PREF_TIMES_VIEWED, times);
     		editor.commit();
     	}
-    	
 	}
 
 	@Override
