@@ -20,10 +20,11 @@
 
 package com.mikedg.android.sudoku.gui;
 
+import java.util.List;
+import java.util.Map;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ListActivity;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -54,6 +55,7 @@ import com.mikedg.android.sudoku.PrivateConstants;
 import com.mikedg.android.sudoku.SudokuBaseListActivity;
 import com.mikedg.android.sudoku.db.SudokuDatabase;
 import com.mikedg.android.sudoku.gui.FolderDetailLoader.FolderDetailCallback;
+import com.mikedg.android.sudoku.service.StatusThread;
 import com.mikedg.android.sudoku.service.SudokuService;
 
 import cz.romario.opensudoku.R;
@@ -68,7 +70,7 @@ import cz.romario.opensudoku.utils.AndroidUtils;
  * @author romario
  *
  */
-public class FolderListActivity extends ListActivity {
+public class FolderListActivity extends SudokuBaseListActivity {
     
 	public static final int MENU_ITEM_ADD = Menu.FIRST;
     public static final int MENU_ITEM_RENAME = Menu.FIRST + 1;
@@ -76,6 +78,8 @@ public class FolderListActivity extends ListActivity {
     public static final int MENU_ITEM_ABOUT = Menu.FIRST + 3;
     public static final int MENU_ITEM_EXPORT = Menu.FIRST + 4;
     public static final int MENU_ITEM_EXPORT_ALL = Menu.FIRST + 5;
+    public static final int MENU_ITEM_WHATS_NEW = Menu.FIRST + 6;
+    public static final int MENU_ITEM_FORCE_CHECK = Menu.FIRST + 7;
 	
 	private static final int DIALOG_ABOUT = 0;
     private static final int DIALOG_ADD_FOLDER = 1;
@@ -114,16 +118,29 @@ public class FolderListActivity extends ListActivity {
 			}
 		});
 		
+		
+		
 		mDatabase = new SudokuDatabase(getApplicationContext());
 		mCursor = mDatabase.getFolderList();
 		startManagingCursor(mCursor);
-		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.folder_list_item,
+		final SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.folder_list_item,
 				mCursor, new String[] { FolderColumns.NAME, FolderColumns._ID},
 				new int[] { R.id.name, R.id.detail});
 		mFolderListBinder = new FolderListViewBinder(this);
 		adapter.setViewBinder(mFolderListBinder);
 		
         setListAdapter(adapter);
+        
+        manageServiceStatusListener(new StatusThread(
+				StatusThread.TRIGGER_FINISHED_DAILY) {
+			@Override
+			public void run() {
+				// If this is running then we just got the latest list
+				//Refresh list!
+				adapter.getCursor().requery();
+			}
+
+		});
         
         // show changelog on first run
         Changelog changelog = new Changelog(this);
@@ -190,8 +207,6 @@ public class FolderListActivity extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		
-        // This is our one standard application action -- inserting a
-        // new note into the list.
 		menu.add(0, MENU_ITEM_ADD, 0, R.string.add_folder)
                 .setShortcut('3', 'a')
                 .setIcon(android.R.drawable.ic_menu_add);
@@ -202,14 +217,21 @@ public class FolderListActivity extends ListActivity {
         .setShortcut('1', 'h')
         .setIcon(android.R.drawable.ic_menu_info_details);
 
+        menu.add(0, MENU_ITEM_WHATS_NEW, 3, R.string.folderlist_whatsnew_menuitem_title)
+        .setShortcut('2', 'w')
+        .setIcon(android.R.drawable.ic_menu_help);
+
+        menu.add(0, MENU_ITEM_FORCE_CHECK, 4, R.string.folderlist_forcecheck_menuitem_title)
+        .setShortcut('4', 'c')
+        .setIcon(R.drawable.ic_menu_refresh);
         // Generate any additional actions that can be performed on the
         // overall list.  In a normal install, there are no additional
         // actions found here, but this allows other applications to extend
         // our menu with their own actions.
-        Intent intent = new Intent(null, getIntent().getData());
-        intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
-        menu.addIntentOptions(Menu.CATEGORY_ALTERNATIVE, 0, 0,
-                new ComponentName(this, FolderListActivity.class), null, intent, 0, null);
+//        Intent intent = new Intent(null, getIntent().getData());
+//        intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
+//        menu.addIntentOptions(Menu.CATEGORY_ALTERNATIVE, 0, 0,
+//                new ComponentName(this, FolderListActivity.class), null, intent, 0, null);
 
         return true;
 		
@@ -234,7 +256,12 @@ public class FolderListActivity extends ListActivity {
 
         menu.add(0, MENU_ITEM_EXPORT, 0, R.string.export_folder);
         menu.add(0, MENU_ITEM_RENAME, 1, R.string.rename_folder);
-        menu.add(0, MENU_ITEM_DELETE, 2, R.string.delete_folder);
+        if (info.id != 4) { //Our import directory
+        	menu.add(0, MENU_ITEM_DELETE, 2, R.string.delete_folder).setEnabled(true);
+        } else {
+        	menu.add(0, MENU_ITEM_DELETE, 2, R.string.delete_folder).setEnabled(false);
+        }
+        	
     }
 
     @Override
@@ -374,6 +401,13 @@ public class FolderListActivity extends ListActivity {
         	return true;
         case MENU_ITEM_ABOUT:
         	showDialog(DIALOG_ABOUT);
+        	return true;
+        case MENU_ITEM_WHATS_NEW:
+        	 Changelog changelog = new Changelog(this);
+             changelog.showChangelogDialog();
+        	return true;
+        case MENU_ITEM_FORCE_CHECK:
+        	SudokuService.startDailyDownload(this);
         	return true;
         }
         return super.onOptionsItemSelected(item);

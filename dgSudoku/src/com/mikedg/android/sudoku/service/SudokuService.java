@@ -32,7 +32,10 @@ public class SudokuService extends Service {
 		return null;
 	}
 
-
+	public static boolean isDailyDownloading() {
+		return isDownloading;
+	}
+	
 	public synchronized static void startDailyDownload(Context context) {
 		if (!isDownloading) {
 			isDownloading = true;
@@ -52,6 +55,7 @@ public class SudokuService extends Service {
 
 			@Override
 			public void run() {
+				try {
 				//FIXME pull the server side stuff first...
 //				String sudokuBoardX = "028409000004650200000000098243001070700000005050300942860000000001063700000705680"; //Tester
 				Vector<String> games = new Vector<String>();
@@ -120,8 +124,12 @@ public class SudokuService extends Service {
 					database.endTransaction();
 					database.close();
 				}
-		
-				isDownloading = false;		
+				} finally {
+					isDownloading = false;
+					Intent intent = new Intent(ServiceStatusReceiver.BROADCAST_STATUS);
+//					intent.putExtra(HungService.EXTRA_METHOD, HungService.METHOD_CLAIM);
+					SudokuService.this.getApplicationContext().sendBroadcast(intent);
+				}
 			}
 			
 		}).start();

@@ -40,7 +40,7 @@ public class Changelog {
 		}
 	}
 	
-	private void showChangelogDialog() {
+	public void showChangelogDialog() {
 
 		String changelog = getChangelogFromResources();
 		

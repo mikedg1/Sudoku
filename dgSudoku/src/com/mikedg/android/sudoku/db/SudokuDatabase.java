@@ -494,7 +494,10 @@ public class SudokuDatabase {
         qb.setTables(SUDOKU_TABLE_NAME);
         
         SQLiteDatabase db = mOpenHelper.getReadableDatabase();
-        return qb.query(db, null, SudokuColumns.DATA +" = ?", new String[]{params.data}, null, null, "created ASC").isAfterLast();
-    	
+        Cursor c = qb.query(db, null, SudokuColumns.DATA +" = ?", new String[]{params.data}, null, null, "created ASC");
+        boolean value = c.isAfterLast();
+        c.close();
+        
+        return value;
     }
 }

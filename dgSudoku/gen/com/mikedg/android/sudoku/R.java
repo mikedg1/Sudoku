@@ -162,7 +162,7 @@ containing a value of this type.
         public static final int btn_toggle_completed_bg=0x7f02000d;
         public static final int btn_toggle_off=0x7f02000e;
         public static final int btn_toggle_on=0x7f02000f;
-        public static final int icon=0x7f020010;
+        public static final int ic_menu_refresh=0x7f020010;
         public static final int opensudoku=0x7f020011;
         public static final int opensudoku_andy=0x7f020012;
         public static final int pencil=0x7f020013;
@@ -281,6 +281,8 @@ containing a value of this type.
         public static final int filter_by_gamestate=0x7f090028;
         public static final int first_run_hint=0x7f09004e;
         public static final int folder_daily=0x7f090083;
+        public static final int folderlist_forcecheck_menuitem_title=0x7f090084;
+        public static final int folderlist_whatsnew_menuitem_title=0x7f090085;
         public static final int folders=0x7f090029;
         public static final int folders_created=0x7f090069;
         public static final int game=0x7f090054;

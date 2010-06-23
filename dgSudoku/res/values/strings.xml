@@ -9,6 +9,8 @@
     <string name="edit_sudoku">Edit sudoku</string>
     
     <string name="puzzle_folders">dg Sudoku A Day puzzle folders</string>
+    <string name="folderlist_forcecheck_menuitem_title">Daily Check</string>
+    <string name="folderlist_whatsnew_menuitem_title">What\'s New</string>
     
     <string name="version">Version: %s</string>
 	<string name="homepage">Homepage: http://android.mikedg.com</string>
