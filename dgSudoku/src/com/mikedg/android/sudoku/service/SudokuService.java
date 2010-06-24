@@ -15,6 +15,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 import com.mikedg.android.sudoku.db.SudokuDatabase;
 
@@ -74,7 +75,8 @@ public class SudokuService extends Service {
 					is = entity.getContent();
 					buffer = new BufferedReader(new InputStreamReader(is));
 					String str = buffer.readLine();
-					while (str != null) {	
+					while (str != null) {
+						Log.d("Sudoku", "game: " + str);
 						games.add(str);
 						str = buffer.readLine();
 					}
@@ -111,15 +113,16 @@ public class SudokuService extends Service {
 	
 					for (String data: games) {
 						params.data = data;
-						//TODO: should check that these are not included already!
-						if (database.doesGameExist(params)) {
+						Log.d("Sudoku", "game import: " + data);
+						if (!database.doesGameExist(params)) {
+							Log.d("Sudoku", "!exists" );
+
 							database.importSudoku(4, params);
 						}
 					}
-//					database.endTransaction();
 					database.setTransactionSuccessful();
 				} catch ( SudokuInvalidFormatException e) {
-					
+					e.printStackTrace();
 				} finally {
 					database.endTransaction();
 					database.close();

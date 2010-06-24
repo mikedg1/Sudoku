@@ -7,7 +7,9 @@
 <body>
 <b>Some notes about dg Sudoku A Day</b>
 <ul>
-<li>First off, welcome to the game!</li>
+<li>Fixed some orientation bugs</li>
+<li>Fixed some cases where daily game would not get downloaded</li>
+<li>Welcome to the game!</li>
 <li>One of the big downfalls to many sudoku games is that you eventually run out of games. And even if you ca add or import more games, it's an annoyance. You won't have to worry about it any longer though. When you open up dgSudoku it will attempt to download the latest games seamlessly. If you don't think it's working, you can force a manual refresh by pressing menu.</li>
 <li>A one button check will pull down your Sudoku games for the day!</li>
 <li>dg Sudoku A Day is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License v3</a></li>
