@@ -498,6 +498,6 @@ public class SudokuDatabase {
         boolean value = c.isAfterLast();
         c.close();
         
-        return value;
+        return !value;
     }
 }

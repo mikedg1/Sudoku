@@ -112,17 +112,19 @@ public class SudokuService extends Service {
 					database.beginTransaction();
 	
 					for (String data: games) {
-						params.data = data;
+						params.data = data.trim(); //I put some bad data here
 						Log.d("Sudoku", "game import: " + data);
 						if (!database.doesGameExist(params)) {
 							Log.d("Sudoku", "!exists" );
-
-							database.importSudoku(4, params);
+							try {
+								database.importSudoku(4, params);
+							} catch ( SudokuInvalidFormatException e) {
+								//Ignore invalid sudoku's in case of import mistakes
+								e.printStackTrace();
+							}
 						}
 					}
 					database.setTransactionSuccessful();
-				} catch ( SudokuInvalidFormatException e) {
-					e.printStackTrace();
 				} finally {
 					database.endTransaction();
 					database.close();

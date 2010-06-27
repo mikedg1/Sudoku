@@ -20,9 +20,6 @@
 
 package com.mikedg.android.sudoku.gui;
 
-import java.util.List;
-import java.util.Map;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -43,6 +40,7 @@ import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -99,6 +97,13 @@ public class FolderListActivity extends SudokuBaseListActivity {
     private long mDeleteFolderID;
     
     @Override
+	protected void onResume() {
+		super.onResume();
+		CursorAdapter adapter = (CursorAdapter)this.getListAdapter();
+		adapter.getCursor().requery(); //So we dont have to worry about refreshing
+	}
+
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
