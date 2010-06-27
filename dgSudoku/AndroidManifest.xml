@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.mikedg.android.sudoku" android:installLocation="auto" android:versionCode="2" android:versionName="1.1">
-	<application android:label="@string/app_name" android:theme="@style/ApplicationTheme" android:icon="@drawable/opensudoku">
+	package="com.mikedg.android.sudoku" android:installLocation="auto" android:versionName="1.2" android:versionCode="3">
+	<application android:label="@string/app_name" android:theme="@style/ApplicationTheme" android:icon="@drawable/opensudoku" android:debuggable="false">
 		<activity android:name=".gui.FolderListActivity"
 			android:label="@string/app_name" android:screenOrientation="portrait">
 			<intent-filter>
